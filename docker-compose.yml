@@ -24,7 +24,7 @@ services:
   django:
     build: .
     restart: always
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py migrate && gunicorn django_backend.wsgi -w 8 -t 300 -b 0.0.0.0:8000"
+    command: bash -c "python3 manage.py makemigrations && python manage.py migrate && python manage.py migrate && gunicorn django_backend.wsgi -w 8 -t 300 -b 0.0.0.0:8000"
     volumes:
       - ./backend:/var/www/backend
     expose:
